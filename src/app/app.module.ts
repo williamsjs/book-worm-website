@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { BooksService } from './shared/services/books.service';
 import { AuthorsService } from './shared/services/authors.service';
+import { CoreService } from './core.service';
 
 import { AppComponent } from './app.component';
 import { BookSearchInputComponent } from './books/book-search-input/book-search-input.component';
@@ -21,7 +22,8 @@ import { BookListComponent } from './books/book-list/book-list.component';
   ],
   providers: [
     BooksService,
-    AuthorsService
+    AuthorsService,
+    CoreService
   ],
   bootstrap: [AppComponent]
 })
