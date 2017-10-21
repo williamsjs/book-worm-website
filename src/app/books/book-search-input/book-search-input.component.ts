@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BookSearchInputComponent implements OnInit {
   @Input("searchInput") searchInput;
-  @Input("searchMethod") searchMethod;
+  @Input("searchMethod") searchMethod: (searchTerm: string) => any[];
 
   constructor() { }
 
