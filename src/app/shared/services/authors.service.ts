@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { CoreService } from '../../core.service';
+import { CoreService } from '../../core/core.service';
 import { Author } from '../models/author';
 import { Observable } from 'rxjs/Observable';
 
