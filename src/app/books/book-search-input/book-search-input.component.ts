@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-book-search-input',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-search-input.component.scss']
 })
 export class BookSearchInputComponent implements OnInit {
+  @Input("searchInput") searchInput;
+  @Input("searchMethod") searchMethod;
 
   constructor() { }
 
