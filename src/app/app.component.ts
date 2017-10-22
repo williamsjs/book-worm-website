@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Observable } from 'rxjs/Observable';
+import { BooksService } from './shared/services/books.service';
 import { Book } from './shared/models/book';
 
 @Component({
@@ -8,9 +9,18 @@ import { Book } from './shared/models/book';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  public bookSearch: () => Book[];
-  public bookTitle: string;
+  public books: string;
+
+  constructor(private booksService: BooksService) {}
 
   ngOnInit() {
+  }
+
+  listBooks(searchInput: string): void {
+    this.booksService.getBooks(searchInput).subscribe(books => {
+      // wire up api call
+    })
+    this.books = searchInput;
+    
   }
 }

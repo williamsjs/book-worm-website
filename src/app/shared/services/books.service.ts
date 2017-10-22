@@ -12,8 +12,8 @@ export class BooksService {
     this.apiUrl = coreService.API_URL
   }
 
-  getBooks(): Observable<Book[]> {
-    return this.http.get<Book[]>(`${this.apiUrl}/books`);
+  getBooks(title: string): Observable<Book[]> {
+    return this.http.get<Book[]>(`${this.apiUrl}/books?title=${title}`);
   }
 
   getBook(bookId: number): Observable<Book> {

@@ -1,5 +1,5 @@
 <div class="container">
-  <app-book-search-input [searchTerm]="bookTitle" [searchMethod]=""></app-book-search-input>
-  <app-book-list></app-book-list>  
+  <app-search-input (inputChange)="listBooks($event)"></app-search-input>
+  <app-search-list [items]="books"></app-search-list>  
 </div>
 
