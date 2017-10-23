@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
 export class SearchInputComponent {
   @Output() inputChange: EventEmitter<string> = new EventEmitter<string>();
 
-  searchInputChange(input: string): void {        
+  searchInputChange(input: string): void {
     this.inputChange.emit(input);
   }
 
