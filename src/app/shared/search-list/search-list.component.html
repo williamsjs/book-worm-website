@@ -1,3 +1,7 @@
 <div class="items">
-  {{items}}
+  <ul>
+    <li *ngFor="let item of items">
+      {{ item.volumeInfo.title }}
+    </li>  
+  </ul>
 </div>

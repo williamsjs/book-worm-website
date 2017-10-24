@@ -9,15 +9,15 @@ import { Book } from './shared/models/book';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public books: string;
+  public books: any[];
 
   constructor(private booksService: BooksService) {}
 
   listBooks(searchInput: string): void {
     this.booksService.getBooks(searchInput).subscribe(books => {
-      // wire up api call
-    })
-    this.books = searchInput;
-    
+      this.books = books['items'];
+      console.log(books);
+      
+    });
   }
 }
