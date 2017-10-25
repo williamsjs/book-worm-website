@@ -24,7 +24,7 @@ export class SearchInputComponent implements OnInit {
   }
 
   searchInputChange(searchTerm: string): void {
-    if (searchTerm !== '') {
+    if (searchTerm) {
       this.searchTerm.next(searchTerm);
     }
   }
