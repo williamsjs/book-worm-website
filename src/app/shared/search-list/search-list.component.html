@@ -1,6 +1,6 @@
 <div class="items">
-  <li *ngFor="let item of items">
+  <li class="item" *ngFor="let item of items">
+    <img class="image-icon" [src]="getImage(item)" alt="">  
     {{ item.volumeInfo.title }}
-    <img [src]="" alt="">
   </li>  
 </div>

@@ -7,4 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class SearchListComponent  {
   @Input() items: any[];
+
+  getImage(item: any): string {
+    return item.volumeInfo.imageLinks.thumbnail;
+  }
 }

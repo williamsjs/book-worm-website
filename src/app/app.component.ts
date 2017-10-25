@@ -16,6 +16,8 @@ export class AppComponent {
   listBooks(searchInput: string): void {
     this.booksService.getBooks(searchInput)
       .subscribe(books => {
+        console.log(books);
+        
         this.books = books;
     });
   }
