@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ISearchItem } from '../interfaces/search-item.interface';
 
 @Component({
   selector: 'app-search-list',
@@ -6,9 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./search-list.component.scss']
 })
 export class SearchListComponent  {
-  @Input() items: any[];
+  @Input() items: ISearchItem[];
 
-  getImage(item: any): string {
-    return item.volumeInfo.imageLinks.thumbnail;
-  }
 }
