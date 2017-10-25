@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 import { CoreService } from '../../core/core.service';
-import { Book } from '../models/book';
 
 @Injectable()
 export class BooksService {
@@ -13,12 +12,12 @@ export class BooksService {
     this.apiUrl = coreService.API_URL;
   }
 
-  getBooks(title: string): Observable<Book[]> {
-    return this.http.get<Book[]>(`${this.apiUrl}/books?title=${title}`);
+  getBooks(title: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/books?title=${title}`);
   }
 
-  getBook(bookId: number): Observable<Book> {
-    return this.http.get<Book>(`${this.apiUrl}/books/${bookId}`);
+  getBook(bookId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/books/${bookId}`);
   }
 
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { BooksService } from './shared/services/books.service';
-import { Book } from './shared/models/book';
+import { BookItem } from './shared/models/book-item';
 import { ISearchItem } from './shared/interfaces/search-item.interface';
 
 @Component({
@@ -10,7 +10,7 @@ import { ISearchItem } from './shared/interfaces/search-item.interface';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public books: Book[];
+  public books: BookItem[];
 
   constructor(private booksService: BooksService) {}
 
@@ -21,13 +21,7 @@ export class AppComponent {
     });
   }
 
-  createBook(book: any): Book {
-    console.log(
-      book['volumeInfo']['imageLinks']['thumbnail']);
-    
-    return new Book(
-      book['volumeInfo']['title'],
-      book['volumeInfo']['imageLinks']['thumbnail']
-    );
+  createBook(book: any): BookItem {
+    return new BookItem(book);
   }
 }
