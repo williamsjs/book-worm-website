@@ -1,5 +1,5 @@
 <div class="row text-center">
   <div class="input-group inline-block">
-    <input type="text" (keyup)="searchInputChange($event.target.value)" class="form-control" placeholder="Search for...">
+    <input type="text" #searchBox (keyup)="searchInputChange(searchBox.value)" class="form-control" placeholder="Search for...">
   </div>
 </div>

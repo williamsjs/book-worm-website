@@ -14,10 +14,9 @@ export class AppComponent {
   constructor(private booksService: BooksService) {}
 
   listBooks(searchInput: string): void {
-    this.booksService.getBooks(searchInput).subscribe(books => {
-      this.books = books['items'];
-      console.log(books);
-      
+    this.booksService.getBooks(searchInput)
+      .subscribe(books => {
+        this.books = books;
     });
   }
 }

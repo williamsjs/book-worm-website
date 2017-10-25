@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/debounceTime';
+
 import { CoreService } from '../../core/core.service';
 import { Book } from '../models/book';
 
@@ -14,8 +14,7 @@ export class BooksService {
   }
 
   getBooks(title: string): Observable<Book[]> {
-    return this.http.get<Book[]>(`${this.apiUrl}/books?title=${title}`)
-                    .debounceTime(1000);
+    return this.http.get<Book[]>(`${this.apiUrl}/books?title=${title}`);
   }
 
   getBook(bookId: number): Observable<Book> {
