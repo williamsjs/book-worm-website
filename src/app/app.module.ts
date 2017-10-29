@@ -11,13 +11,15 @@ import { AppComponent } from './app.component';
 import { SearchInputComponent } from './shared/search-input/search-input.component';
 import { SearchListComponent } from './shared/search-list/search-list.component';
 import { LoginComponent } from './login/login.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchInputComponent,
     SearchListComponent,
-    LoginComponent
+    LoginComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
