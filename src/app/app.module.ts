@@ -10,12 +10,14 @@ import { CoreService } from './core/core.service';
 import { AppComponent } from './app.component';
 import { SearchInputComponent } from './shared/search-input/search-input.component';
 import { SearchListComponent } from './shared/search-list/search-list.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchInputComponent,
-    SearchListComponent
+    SearchListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
