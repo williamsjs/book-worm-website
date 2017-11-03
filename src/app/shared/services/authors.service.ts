@@ -9,14 +9,14 @@ export class AuthorsService {
   private apiUrl: string;
 
   constructor(private http: HttpClient, private coreService: CoreService) {
-    this.apiUrl = coreService.API_URL
+    this.apiUrl = coreService.API_URL;
   }
 
   getAuthors(): Observable<Author[]> {
     return this.http.get<Author[]>(`${this.apiUrl}/authors`);
   }
 
-  getAuthor(authorId: number) : Observable<Author> {
+  getAuthor(authorId: number): Observable<Author> {
     return this.http.get<Author>(`${this.apiUrl}/authors/${authorId}`);
   }
 
