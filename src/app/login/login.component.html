@@ -11,4 +11,7 @@
     </div>
     <button type="submit" (click)="login(email.value, password.value)" class="btn btn-primary">Submit</button>
   </form>
+  <div *ngIf="error" class="alert">
+    <p>Something Went Wrong :(</p>
+  </div>
 </div>

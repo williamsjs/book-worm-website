@@ -10,8 +10,8 @@ export class AuthService {
   private apiUrl: string;
 
   constructor(private http: HttpClient,
-              private coreService: CoreService,
-              private jwtHelperService: JwtHelperService) {
+              private coreService: CoreService) {
+              // private jwtHelperService: JwtHelperService) {
                   this.apiUrl = coreService.API_URL;
               }
 

@@ -8,12 +8,15 @@ import { AuthService } from '../core/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-
+  public error: boolean;
   constructor(private authService: AuthService) { }
 
   login(email: string, password: string): void {
     this.authService.authenticate(email, password).subscribe(res => {
+      this.error = false;
       console.log(res);
+    }, err => {
+      this.error = true;
     });
   }
 
