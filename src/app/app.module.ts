@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { BooksService } from './shared/services/books.service';
 import { AuthorsService } from './shared/services/authors.service';
 import { CoreService } from './core/core.service';
-
+import { AuthService } from './core/auth.service';
 import { AppComponent } from './app.component';
 import { SearchInputComponent } from './shared/search-input/search-input.component';
 import { SearchListComponent } from './shared/search-list/search-list.component';
@@ -29,7 +29,8 @@ import { MainComponent } from './main/main.component';
   providers: [
     BooksService,
     AuthorsService,
-    CoreService
+    CoreService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
