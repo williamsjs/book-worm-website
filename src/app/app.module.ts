@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-import { JwtHelperService } from '@auth0/angular-jwt';
 import { AppRoutingModule } from './app.routes';
 import { BooksService } from './shared/services/books.service';
 import { AuthorsService } from './shared/services/authors.service';
@@ -36,7 +35,6 @@ import { MainComponent } from './main/main.component';
     CoreService,
     AuthService,
     AuthGuard
-    // JwtHelperService
   ],
   bootstrap: [AppComponent]
 })
