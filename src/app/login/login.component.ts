@@ -14,7 +14,7 @@ export class LoginComponent {
   login(email: string, password: string): void {
     this.authService.authenticate(email, password).subscribe(res => {
       this.error = false;
-      localStorage.setItem('token', res['auth_token']);
+      this.authService.setToken(res['auth_token']);
     }, err => {
       this.error = true;
     });

@@ -20,4 +20,12 @@ export class AuthService {
     });
   }
 
+  setToken(token: string): void {
+    localStorage.setItem('token', token);
+  }
+
+  loggedIn(): boolean {
+    return !!localStorage.getItem('token');
+  }
+
 }
