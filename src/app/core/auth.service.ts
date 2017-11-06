@@ -24,8 +24,33 @@ export class AuthService {
     localStorage.setItem('token', token);
   }
 
+  getToken(): string {
+    return localStorage.getItem('token');
+  }
+
   loggedIn(): boolean {
     return !!localStorage.getItem('token');
+  }
+
+  getTokenExpirationDate(): Date {
+    const decoded = jwt_decode(this.getToken());
+
+    const date = new Date(0);
+    date.setUTCSeconds(decoded['exp']);
+    return date;
+  }
+
+  tokenExpired(): boolean {
+    if (!!this.getToken()) {
+      return true;
+    }
+
+    const date = this.getTokenExpirationDate();
+
+    if (date === undefined) {
+      return true;
+    }
+    return !(date.valueOf() > new Date().valueOf());
   }
 
 }

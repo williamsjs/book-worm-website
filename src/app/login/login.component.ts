@@ -15,6 +15,7 @@ export class LoginComponent {
     this.authService.authenticate(email, password).subscribe(res => {
       this.error = false;
       this.authService.setToken(res['auth_token']);
+      this.authService.tokenExpired();
     }, err => {
       this.error = true;
     });
