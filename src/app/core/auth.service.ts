@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-
 import { CoreService } from './core.service';
+import * as jwt_decode from 'jwt-decode';
 
 @Injectable()
 export class AuthService {
