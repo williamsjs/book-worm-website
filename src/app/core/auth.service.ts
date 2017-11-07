@@ -49,4 +49,8 @@ export class AuthService {
     return !(date.valueOf() > new Date().valueOf());
   }
 
+  logOut(): void {
+    localStorage.removeItem('token');
+  }
+
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 import { BooksService } from '../shared/services/books.service';
+import { AuthService } from '../core/auth.service';
 import { BookItem } from '../shared/models/book-item';
 import { ISearchItem } from '../shared/interfaces/search-item.interface';
 
@@ -12,7 +14,9 @@ import { ISearchItem } from '../shared/interfaces/search-item.interface';
 export class MainComponent {
   public books: BookItem[];
 
-  constructor(private booksService: BooksService) {}
+  constructor(private booksService: BooksService,
+              private authService: AuthService,
+              private router: Router) {}
 
   listBooks(searchInput: string): void {
     this.booksService.getBooks(searchInput)
@@ -23,6 +27,11 @@ export class MainComponent {
 
   createBook(book: any): BookItem {
     return new BookItem(book);
+  }
+
+  logOut(): void {
+    this.authService.logOut();
+    this.router.navigate(['/login']);
   }
 
 }
