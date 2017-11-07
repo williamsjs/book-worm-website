@@ -28,12 +28,9 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
-  loggedIn(): boolean {
-    return !!localStorage.getItem('token');
-  }
+  getTokenExpirationDate(token: string): Date {
 
-  getTokenExpirationDate(): Date {
-    const decoded = jwt_decode(this.getToken());
+    const decoded = jwt_decode(token);
 
     const date = new Date(0);
     date.setUTCSeconds(decoded['exp']);
@@ -41,11 +38,13 @@ export class AuthService {
   }
 
   tokenExpired(): boolean {
-    if (!!this.getToken()) {
+    const token = this.getToken();
+
+    if (!token) {
       return true;
     }
 
-    const date = this.getTokenExpirationDate();
+    const date = this.getTokenExpirationDate(token);
 
     return !(date.valueOf() > new Date().valueOf());
   }
