@@ -14,6 +14,7 @@ import { SearchInputComponent } from './shared/search-input/search-input.compone
 import { SearchListComponent } from './shared/search-list/search-list.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
+import { BookWormHeaders } from './core/book-worm-headers';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MainComponent } from './main/main.component';
     AuthorsService,
     CoreService,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    BookWormHeaders
   ],
   bootstrap: [AppComponent]
 })
