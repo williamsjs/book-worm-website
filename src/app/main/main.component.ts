@@ -19,14 +19,14 @@ import 'rxjs/add/observable/of';
 })
 export class MainComponent implements OnInit {
   public books: BookItem[];
-  private searchTerm = new Subject<string>();
+  private searchTerm$ = new Subject<string>();
 
   constructor(private booksService: BooksService,
               private authService: AuthService,
               private router: Router) {}
 
   ngOnInit() {
-    this.searchTerm
+    this.searchTerm$
         .distinctUntilChanged()
         .debounceTime(300)
         .subscribe(term => this.displayBooks(term));
@@ -40,7 +40,7 @@ export class MainComponent implements OnInit {
   }
 
   listBooks(searchInput: string): void {
-    this.searchTerm.next(searchInput);
+    this.searchTerm$.next(searchInput);
   }
 
   createBook(book: any): BookItem {
