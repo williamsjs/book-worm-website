@@ -18,7 +18,7 @@ import 'rxjs/add/observable/of';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  public books: BookItem[];
+  public books: {items: BookItem[], loading: boolean};
   private searchTerm$ = new Subject<string>();
 
   constructor(private booksService: BooksService,
@@ -30,12 +30,15 @@ export class MainComponent implements OnInit {
         .distinctUntilChanged()
         .debounceTime(300)
         .subscribe(term => this.displayBooks(term));
+
+    this.searchTerm$.subscribe(term => this.books = {items: [], loading: true});
   }
 
   displayBooks(searchInput: string): void {
     this.booksService.getBooks(searchInput)
       .subscribe(books => {
-        this.books = books.map(book => this.createBook(book));
+        this.books.items = books.map(book => this.createBook(book));
+        this.books.loading = false;
     });
   }
 

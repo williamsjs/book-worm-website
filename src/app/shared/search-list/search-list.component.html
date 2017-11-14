@@ -1,6 +1,11 @@
 <div class="items">
-  <li class="item" *ngFor="let item of items">
-    <img class="image-icon" [src]="item.imageUrl" alt="">  
-    {{ item.title }}
-  </li>  
+  <div *ngIf="data">
+    <li class="item" *ngFor="let item of data.items">
+      <img class="image-icon" [src]="item.imageUrl" alt="">  
+      {{ item.title }}
+    </li>
+    <div *ngIf="data.loading">
+      <h1>Loading</h1>
+    </div>
+  </div>
 </div>
