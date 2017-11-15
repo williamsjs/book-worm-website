@@ -1,13 +1,9 @@
 <div class="items">
   <div *ngIf="list">
-    <div class="row">
-      <li class="item" *ngFor="let item of list.items">
-        <div class="col-md-4 col-sm-6 col-xs-12 text-center">
-          <p class="item-title">{{ item.title }}</p>       
-          <img class="image-icon" [src]="item.imageUrl" alt="image">  
-        </div>
-      </li>
-    </div>
+    <li class="item col-md-4 col-sm-6 col-xs-12 text-center" *ngFor="let item of list.items">
+      <p class="item-title">{{ item.title }}</p>       
+      <img class="image-icon" [src]="item.imageUrl" alt="image">  
+    </li>
     <div *ngIf="list.loading">
       <h1>Loading</h1>
     </div>
