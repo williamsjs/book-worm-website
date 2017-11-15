@@ -1,7 +1,7 @@
 <div class="items">
   <div *ngIf="data">
-    <li class="item" *ngFor="let item of data.items">
-      <img class="image-icon" [src]="item.imageUrl" alt="">  
+    <li class="item" *ngFor="let item of list.items">
+      <img class="image-icon" [src]="item.imageUrl" alt="image">  
       {{ item.title }}
     </li>
     <div *ngIf="data.loading">

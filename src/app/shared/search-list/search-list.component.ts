@@ -7,6 +7,5 @@ import { ISearchItem } from '../interfaces/search-item.interface';
   styleUrls: ['./search-list.component.scss']
 })
 export class SearchListComponent  {
-  @Input() data: {items: ISearchItem[], loading: boolean};
-
+  @Input() list: {items: ISearchItem[], loading: boolean};
 }
