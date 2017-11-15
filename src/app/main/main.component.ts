@@ -35,11 +35,18 @@ export class MainComponent implements OnInit {
   }
 
   displayBooks(searchInput: string): void {
-    this.booksService.getBooks(searchInput)
-      .subscribe(books => {
-        this.books.items = books.map(book => this.createBook(book));
-        this.books.loading = false;
-    });
+
+    if (searchInput === '') {
+      this.setItems([]);
+    } else {
+      this.booksService.getBooks(searchInput)
+      .subscribe(books => this.setItems(books.map(book => this.createBook(book))));
+    }
+  }
+
+  setItems(bookList: any[]): void {
+    this.books.items = bookList;
+    this.books.loading = false;
   }
 
   listBooks(searchInput: string): void {

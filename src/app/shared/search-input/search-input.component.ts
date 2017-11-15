@@ -10,9 +10,7 @@ export class SearchInputComponent {
   @Output() inputChange: EventEmitter<string> = new EventEmitter<string>();
 
   searchInputChange(searchTerm: string): void {
-    if (searchTerm) {
-      this.inputChange.emit(searchTerm);
-    }
+    this.inputChange.emit(searchTerm);
   }
 
 }
