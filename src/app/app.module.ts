@@ -15,6 +15,7 @@ import { SearchListComponent } from './shared/search-list/search-list.component'
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { BookWormHeaders } from './core/book-worm-headers';
+import { SearchItemComponent } from './src/app/shared/search-item/search-item.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BookWormHeaders } from './core/book-worm-headers';
     SearchInputComponent,
     SearchListComponent,
     LoginComponent,
-    MainComponent
+    MainComponent,
+    SearchItemComponent
   ],
   imports: [
     BrowserModule,
