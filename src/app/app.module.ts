@@ -12,10 +12,10 @@ import { AuthGuard } from './core/auth.guard';
 import { AppComponent } from './app.component';
 import { SearchInputComponent } from './shared/search-input/search-input.component';
 import { SearchListComponent } from './shared/search-list/search-list.component';
+import { SearchItemComponent } from './shared/search-item/search-item.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { BookWormHeaders } from './core/book-worm-headers';
-import { SearchItemComponent } from './src/app/shared/search-item/search-item.component';
 
 @NgModule({
   declarations: [

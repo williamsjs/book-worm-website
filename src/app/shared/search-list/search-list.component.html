@@ -1,8 +1,7 @@
 <div class="items">
   <div *ngIf="list">
     <li class="item col-md-4 col-sm-6 col-xs-12 text-center" *ngFor="let item of list.items">
-      <p class="item-title">{{ item.title }}</p>       
-      <img class="image-icon" [src]="item.imageUrl" alt="image">  
+      <app-search-item [item]="item"></app-search-item> 
     </li>
     <div *ngIf="list.loading">
       <h1 class="text-center">Loading</h1>
