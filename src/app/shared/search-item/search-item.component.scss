@@ -1,8 +1,17 @@
 .image-icon {
   height: 130px;
   width: 90px;
+  margin-bottom: 40px;
 }
 
 .item-title {
   margin: 22px auto;
+  font-size: 17px;
+}
+
+.search-item {
+  width: 95%;
+  margin: 30px auto;
+  border: 1.5px solid black;
+  border-radius: 5px;
 }
