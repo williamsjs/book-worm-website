@@ -1,6 +1,7 @@
 <div class="items">
   <div *ngIf="list">
-    <li class="item col-md-4 col-sm-6 col-xs-12 text-center" *ngFor="let item of list.items">
+    <li class="item col-md-4 col-sm-6 col-xs-12 text-center"
+     *ngFor="let item of list.items">
       <app-search-item [item]="item"></app-search-item> 
     </li>
     <div *ngIf="list.loading">
