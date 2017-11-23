@@ -10,13 +10,29 @@
 }
 
 .search-item {
+  position: relative;
   margin: 30px auto;
   border: 1.5px solid black;
   border-radius: 5px;
 }
 
-.search-item:hover {
-  width: 100%;
-  background-color: black;
-  z-index: 5;
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #000;
+  opacity: 0;
+}
+
+.search-item:hover .overlay {
+  opacity: .4;
+}
+
+.plus-icon {
+  color: purple;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
