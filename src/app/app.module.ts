@@ -16,7 +16,6 @@ import { SearchItemComponent } from './shared/search-item/search-item.component'
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { BookWormHeaders } from './core/book-worm-headers';
-import { HoverAddDirective } from './shared/hover-add/hover-add.directive';
 
 @NgModule({
   declarations: [
@@ -25,8 +24,7 @@ import { HoverAddDirective } from './shared/hover-add/hover-add.directive';
     SearchListComponent,
     LoginComponent,
     MainComponent,
-    SearchItemComponent,
-    HoverAddDirective
+    SearchItemComponent
   ],
   imports: [
     BrowserModule,
